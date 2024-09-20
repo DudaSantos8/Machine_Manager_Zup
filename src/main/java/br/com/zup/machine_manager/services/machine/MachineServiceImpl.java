@@ -13,6 +13,7 @@ import java.util.List;
 
 @Service
 public class MachineServiceImpl implements MachineService {
+
     @Autowired
     private MachineRepository machineRepository;
 

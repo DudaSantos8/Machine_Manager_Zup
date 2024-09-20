@@ -6,6 +6,7 @@ import br.com.zup.machine_manager.controllers.zupers.dtos.ZuperUpdateDTO;
 import br.com.zup.machine_manager.repository.models.Zuper;
 import br.com.zup.machine_manager.services.zuper.ZuperService;
 import br.com.zup.machine_manager.services.zuper.mappers.ZuperMapper;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +36,7 @@ public class ZuperController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ZuperResponseDTO create(@RequestBody ZuperCreateDTO zuper){
+    public ZuperResponseDTO create(@RequestBody @Valid ZuperCreateDTO zuper){
         return ZuperMapper.toZuperResponseDTO(zuperService.save(zuper));
     }
 

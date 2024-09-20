@@ -1,10 +1,15 @@
 package br.com.zup.machine_manager.controllers.machine.dtos;
 
-import br.com.zup.machine_manager.repository.models.Zuper;
+import br.com.zup.machine_manager.repository.models.Machine;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public class MachineCreateDTO {
+    @NotNull
+    @NotBlank
     private String brand;
     private Boolean isInUse;
+
     private Integer zuperId;
 
     public MachineCreateDTO(String brand, Boolean isInUse, Integer zuperId) {
